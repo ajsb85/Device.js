@@ -1,9 +1,9 @@
 {
   "name":           "uupaa.devicespec.js",
-  "version":        "0.8.0",
+  "version":        "0.8.1",
   "description":    "Mobile Device spec.",
   "url":            "https://github.com/uupaa/DeviceSpec.js",
-  "keywords":       ["base64", "util", "uupaa"],
+  "keywords":       ["device", "spec", "util", "uupaa"],
   "author":         "uupaa <uupaa.js@gmail.com>",
   "license":        "MIT",
   "repository":     { "type": "git", "url": "https://github.com/uupaa/DeviceSpec.js.git" },
