@@ -1,17 +1,17 @@
-DeviceSpec.js
+Device.js
 =========
 
-DeviceSpec.js is mobile device spec database.
+Device.js is mobile device spec database.
 
 # API Document
 
-https://github.com/uupaa/DeviceSpec.js/wiki/DeviceSpec
+https://github.com/uupaa/Device.js/wiki/Device
 
 # Install, Setup modules
 
 ```sh
-$ git clone git@github.com:uupaa/DeviceSpec.js.git
-$ cd DeviceSpec.js
+$ git clone git@github.com:uupaa/Device.js.git
+$ cd Device.js
 $ npm install
 ```
 
@@ -20,6 +20,6 @@ $ npm install
 ```sh
 $ npm test
 
-    > uupaa.devicespec.js@0.8.0 test /Users/username/path/DeviceSpec.js
+    > uupaa.device.js@0.8.0 test /Users/username/path/Device.js
     > NODE_ENV=production NODE_PATH=lib node --harmony test/index.node.js; open test/index.html
 ```

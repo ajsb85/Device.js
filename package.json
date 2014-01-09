@@ -1,12 +1,12 @@
 {
-  "name":           "uupaa.devicespec.js",
+  "name":           "uupaa.device.js",
   "version":        "0.8.2",
   "description":    "Mobile Device spec.",
-  "url":            "https://github.com/uupaa/DeviceSpec.js",
+  "url":            "https://github.com/uupaa/Device.js",
   "keywords":       ["device", "spec", "util", "uupaa"],
   "author":         "uupaa <uupaa.js@gmail.com>",
   "license":        "MIT",
-  "repository":     { "type": "git", "url": "https://github.com/uupaa/DeviceSpec.js.git" },
+  "repository":     { "type": "git", "url": "https://github.com/uupaa/Device.js.git" },
   "contributors":   [],
   "devDependencies": {
     "uupaa.help.js": ">= 0.8.1",

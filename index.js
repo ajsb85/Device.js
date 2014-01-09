@@ -1,2 +1,2 @@
-module.exports = require("./lib/DeviceSpec");
+module.exports = require("./lib/Device");
 

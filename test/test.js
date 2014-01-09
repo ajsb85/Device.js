@@ -7,7 +7,7 @@ function testDeviceSpec(next) {
 //    var userAgent = "Mozilla/5.0 (Linux; Android 4.2.2; Nexus 7 Build/JDQ39) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.169 Safari/537.22";
     var userAgent = "Mozilla/5.0 (Linux; Android 4.4; Nexus 5 Build/BuildID) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Mobile Safari/537.36";
 
-    var spec = DeviceSpec.detect( DeviceSpec.token(userAgent) );
+    var spec = Device.spec( Device.token(userAgent) );
 
     if (spec.DEVICE         === "Nexus 5" &&
         spec.BRAND          === "Google" &&
@@ -28,7 +28,7 @@ function testDeviceSpec(next) {
 function testDeviceRevision_Nexus7_2013(next) {
     var userAgent = "Mozilla/5.0 (Linux; Android 4.3; Nexus 7 Build/JWR66N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.111 Safari/537.36";
 
-    var spec = DeviceSpec.detect( DeviceSpec.token(userAgent) );
+    var spec = Device.spec( Device.token(userAgent) );
 //alert(JSON.stringify(spec));
 
     if (spec.DEVICE          === "Nexus 7 (2013)" &&
