@@ -1,5 +1,6 @@
 new Test().add([
         testDevice,
+        testDeviceiPhone5,
         testDeviceNexus5,
         testDeviceRevision_Nexus7_2013,
     ]).run();
@@ -9,6 +10,23 @@ function testDevice(next) {
 
     console.log("testDevice ok: " + spec.DEVICE.TOKEN);
     next && next.pass();
+}
+
+function testDeviceiPhone5(next) {
+
+    var userAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A403 Safari/8536.25";
+    var spec = Device(userAgent);
+
+    if (spec.DEVICE.TOKEN   === "iPhone 5" &&
+        spec.DEVICE.BRAND   === "Apple" &&
+        spec.OS.VERSION     ==  6.0 &&
+        spec.GPU.TYPE       === "PowerVR") {
+        console.log("testDeviceiPhone5 ok: " + spec.DEVICE.TOKEN);
+        next && next.pass();
+    } else {
+        console.log("testDeviceiPhone5 ng: " + spec.DEVICE.TOKEN);
+        next && next.miss();
+    }
 }
 
 function testDeviceNexus5(next) {
@@ -38,7 +56,7 @@ function testDeviceRevision_Nexus7_2013(next) {
     if (spec.DEVICE.TOKEN     === "Nexus 7 (2013)" &&
         spec.DEVICE.SOC       === "APQ8064" &&
         spec.DEVICE.GPS       === true &&
-        spec.OS.VERSION.FIRST === 430 &&
+        spec.OS.VERSION.FIRST ==  4.3 &&
         spec.DISPLAY.DPR      === 2 &&
         spec.MEMORY.RAM       === 2 &&
         spec.GPU.TYPE         === "Adreno") {
