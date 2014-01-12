@@ -1,6 +1,6 @@
 {
   "name":           "uupaa.device.js",
-  "version":        "0.9.4",
+  "version":        "0.9.5",
   "description":    "Mobile Device spec.",
   "url":            "https://github.com/uupaa/Device.js",
   "keywords":       ["movile", "device", "spec", "util", "uupaa"],

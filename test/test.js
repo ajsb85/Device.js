@@ -3,6 +3,7 @@ new Test().add([
         testDeviceiPhone5,
         testDeviceNexus5,
         testDeviceRevision_Nexus7_2013,
+        testDeviceAndroidFirefox,
     ]).run();
 
 function testDevice(next) {
@@ -77,3 +78,23 @@ function testDeviceRevision_Nexus7_2013(next) {
         next && next.miss();
     }
 }
+
+function testDeviceAndroidFirefox(next) {
+    var userAgent = "Mozilla/5.0 (Android; Mobile; rv:13.0) Gecko/13.0 Firefox/13.0";
+    var spec = Device( userAgent );
+
+    if (spec.DEVICE.ID        === "" &&
+        spec.DEVICE.SOC       === "" &&
+        spec.DEVICE.GPS       === false &&
+        spec.OS.VERSION.PRE   ==  0 &&
+        spec.DISPLAY.DPR      === 0 &&
+        spec.MEMORY.RAM       === 0 &&
+        spec.GPU.TYPE         === "") {
+        console.log("testDeviceAndroidFirefox ok: " + spec.DEVICE.ID);
+        next && next.pass();
+    } else {
+        console.log("testDeviceAndroidFirefox ng: " + spec.DEVICE.ID);
+        next && next.miss();
+    }
+}
+
