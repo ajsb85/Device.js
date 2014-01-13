@@ -4,6 +4,7 @@ new Test().add([
         testDeviceQueryGPU,
         testDeviceQueryDEVICE,
         testDeviceQueryOSVERSION,
+        testDeviceQueryDISPLAY,
         testDeviceQueryCaseSensitive,
         testDeviceiPhone5,
         testDeviceNexus5,
@@ -68,6 +69,19 @@ function testDeviceQueryOSVERSION(next) {
         next && next.pass();
     } else {
         console.log("testDeviceQueryOSVERSION ng. query: " + queryString + ", result: " + id.join(","));
+        next && next.miss();
+    }
+}
+
+function testDeviceQueryDISPLAY(next) {
+    var queryString = "OS.TYPE = ios; DEVICE.SOC = A5X ; DISPLAY.LONG > 1920";
+    var id = Device.query(queryString);
+
+    if ( id.join(",") === "iPad 3" ) {
+        console.log("testDeviceQueryDISPLAY ok. query: " + queryString + ", result: " + id.join(","));
+        next && next.pass();
+    } else {
+        console.log("testDeviceQueryDISPLAY ng. query: " + queryString + ", result: " + id.join(","));
         next && next.miss();
     }
 }
