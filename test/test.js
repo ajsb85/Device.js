@@ -1,5 +1,7 @@
 new Test().add([
         testDevice,
+        testDeviceCatalog,
+        testDeviceToSpecObject,
         testDeviceiPhone5,
         testDeviceNexus5,
         testDeviceRevision_Nexus7_2013,
@@ -13,6 +15,32 @@ function testDevice(next) {
 
     console.log("testDevice ok: " + spec.DEVICE.ID);
     next && next.pass();
+}
+
+function testDeviceCatalog(next) {
+    var object1 = Device.catalog("SOC");
+    var object2 = Device.catalog("DEVICE");
+    var object3 = Device.catalog("");
+
+    if (object1 && object2 && object3) {
+        console.log("testDeviceCatalog ok.");
+        next && next.pass();
+    } else {
+        console.log("testDeviceCatalog ng.");
+        next && next.miss();
+    }
+}
+
+function testDeviceToSpecObject(next) {
+    var spec = Device.toSpecObject("iPhone 3GS");
+
+    if (spec.DEVICE.BRAND === "Apple") {
+        console.log("testDeviceToSpecObject ok.");
+        next && next.pass();
+    } else {
+        console.log("testDeviceToSpecObject ng.");
+        next && next.miss();
+    }
 }
 
 function testDeviceQueryCPU(next) {
