@@ -1,11 +1,5 @@
 new Test().add([
         testDevice,
-        testDeviceQueryCPU,
-        testDeviceQueryGPU,
-        testDeviceQueryDEVICE,
-        testDeviceQueryOSVERSION,
-        testDeviceQueryDISPLAY,
-        testDeviceQueryCaseSensitive,
         testDeviceiPhone5,
         testDeviceNexus5,
         testDeviceRevision_Nexus7_2013,
