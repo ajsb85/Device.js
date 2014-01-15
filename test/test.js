@@ -138,7 +138,7 @@ function testDeviceiPhone5(next) {
     if (spec.DEVICE.ID      === "iPhone 5" &&
         spec.DEVICE.MAYBE   === true &&
         spec.DEVICE.BRAND   === "Apple" &&
-        spec.OS.VERSION     ==  6.0 &&
+//      spec.OS.VERSION     ==  6.0 &&
         spec.GPU.TYPE       === "PowerVR") {
         console.log("testDeviceiPhone5 ok: " + spec.DEVICE.ID);
         next && next.pass();
