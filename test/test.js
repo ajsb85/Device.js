@@ -43,85 +43,6 @@ function testDeviceToSpecObject(next) {
     }
 }
 
-function testDeviceQueryCPU(next) {
-    var queryString = "CPU.TYPE = ARM; CPU.CLOCK >= 2.2";
-    var id = Device.query(queryString);
-
-    if ( id.join(",") === "MSM8974" ) {
-        console.log("testDeviceQueryCPU ok. query: " + queryString + ", result: " + id.join(","));
-        next && next.pass();
-    } else {
-        console.log("testDeviceQueryCPU ng. query: " + queryString + ", result: " + id.join(","));
-        next && next.miss();
-    }
-}
-
-function testDeviceQueryGPU(next) {
-    var queryString = "GPU.TYPE=Adreno; GPU.ID=320";
-    var id = Device.query(queryString);
-
-    if ( id.join(",") === "APQ8064T,APQ8064" ) {
-        console.log("testDeviceQueryGPU ok. query: " + queryString + ", result: " + id.join(","));
-        next && next.pass();
-    } else {
-        console.log("testDeviceQueryGPU ng. query: " + queryString + ", result: " + id.join(","));
-        next && next.miss();
-    }
-}
-
-function testDeviceQueryDEVICE(next) {
-    var queryString = "DEVICE.BRAND=Google; DEVICE.SOC=MSM8974";
-    var id = Device.query(queryString);
-
-    if ( id.join(",") === "Nexus 5,EM01L" ) {
-        console.log("testDeviceQueryDEVICE ok. query: " + queryString + ", result: " + id.join(","));
-        next && next.pass();
-    } else {
-        console.log("testDeviceQueryDEVICE ng. query: " + queryString + ", result: " + id.join(","));
-        next && next.miss();
-    }
-}
-
-function testDeviceQueryOSVERSION(next) {
-    var queryString = "OS.TYPE = android; OS.VERSION.PRE >= 2.3 ; OS.VERSION.HIGHEST < 4.1";
-    var id = Device.query(queryString);
-
-    if ( id.length ) {
-        console.log("testDeviceQueryOSVERSION ok. query: " + queryString + ", result: " + id.join(","));
-        next && next.pass();
-    } else {
-        console.log("testDeviceQueryOSVERSION ng. query: " + queryString + ", result: " + id.join(","));
-        next && next.miss();
-    }
-}
-
-function testDeviceQueryDISPLAY(next) {
-    var queryString = "OS.TYPE = ios; DEVICE.SOC = A5X ; DISPLAY.LONG > 1920";
-    var id = Device.query(queryString);
-
-    if ( id.join(",") === "iPad 3" ) {
-        console.log("testDeviceQueryDISPLAY ok. query: " + queryString + ", result: " + id.join(","));
-        next && next.pass();
-    } else {
-        console.log("testDeviceQueryDISPLAY ng. query: " + queryString + ", result: " + id.join(","));
-        next && next.miss();
-    }
-}
-
-function testDeviceQueryCaseSensitive(next) {
-    var id1 = Device.query("OS.TYPE = android", true);  // case-sensitive
-    var id2 = Device.query("OS.TYPE = Android", false); // ignore-case
-
-    if ( id1.length === 0 &&
-         id2.length >= 0 ) {
-        console.log("testDeviceQueryCaseSensitive ok.");
-        next && next.pass();
-    } else {
-        console.log("testDeviceQueryCaseSensitive ng.");
-        next && next.miss();
-    }
-}
-
 function testDeviceiPhone5(next) {
 
     var userAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A403 Safari/8536.25";
@@ -159,7 +80,7 @@ function testDeviceNexus5(next) {
         spec.DISPLAY.SHORT  === 1080 &&
         spec.DISPLAY.PPI    === 445 &&
         spec.DISPLAY.DPR    === 3 &&
-        spec.MEMORY.RAM     === 2 &&
+        spec.MEMORY.RAM     === 2048 &&
         spec.GPU.TYPE       === "Adreno") {
         console.log("testDeviceNexus5 ok: " + spec.DEVICE.ID);
         next && next.pass();
@@ -178,7 +99,7 @@ function testDeviceRevision_Nexus7_2013(next) {
         spec.DEVICE.GPS       === true &&
         spec.OS.VERSION.PRE   ==  4.3 &&
         spec.DISPLAY.DPR      === 2 &&
-        spec.MEMORY.RAM       === 2 &&
+        spec.MEMORY.RAM       === 2048 &&
         spec.GPU.TYPE         === "Adreno") {
         console.log("testDeviceRevision_Nexus7_2013 ok: " + spec.DEVICE.ID);
         next && next.pass();
@@ -215,7 +136,7 @@ function testDeviceWindowPhone8S(next) {
         spec.DEVICE.SOC       === "MSM8627" &&
         spec.DEVICE.GPS       === true &&
         spec.OS.VERSION.PRE   ==  8 &&
-        spec.MEMORY.RAM       === 0.5 &&
+        spec.MEMORY.RAM       === 512 &&
         spec.GPU.TYPE         === "Adreno") {
         console.log("testDeviceWindowPhone8S ok: " + spec.DEVICE.ID);
         next && next.pass();
@@ -233,7 +154,7 @@ function testDeviceWindowPhoneLumia920(next) {
         spec.DEVICE.SOC       === "MSM8960" &&
         spec.DEVICE.GPS       === true &&
         spec.OS.VERSION.PRE   ==  8 &&
-        spec.MEMORY.RAM       === 1 &&
+        spec.MEMORY.RAM       === 1024 &&
         spec.GPU.TYPE         === "Adreno" &&
         spec.GPU.ID           === "225") {
         console.log("testDeviceWindowPhoneLumia920 ok: " + spec.DEVICE.ID);
