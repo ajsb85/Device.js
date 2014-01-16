@@ -11,7 +11,7 @@ new Test().add([
     ]).run();
 
 function testDevice(next) {
-    var spec = Device();
+    var spec = Device( Spec() );
 
     console.log("testDevice ok: " + spec.DEVICE.ID);
     next && next.pass();
@@ -32,7 +32,7 @@ function testDeviceCatalog(next) {
 }
 
 function testDeviceToSpecObject(next) {
-    var spec = Device.toSpecObject("iPhone 3GS");
+    var spec = Device("iPhone 3GS");
 
     if (spec.DEVICE.BRAND === "Apple") {
         console.log("testDeviceToSpecObject ok.");
@@ -54,7 +54,7 @@ function testDeviceiPhone5(next) {
             devicePixelRatio: 2
         };
 
-    var spec = Device( userAgent, emulate );
+    var spec = Device( Spec(userAgent), emulate );
 
     if (spec.DEVICE.ID      === "iPhone 5" &&
         spec.DEVICE.MAYBE   === true &&
@@ -71,7 +71,7 @@ function testDeviceiPhone5(next) {
 
 function testDeviceNexus5(next) {
     var userAgent = "Mozilla/5.0 (Linux; Android 4.4; Nexus 5 Build/BuildID) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Mobile Safari/537.36";
-    var spec = Device( userAgent );
+    var spec = Device( Spec(userAgent) );
 
     if (spec.DEVICE.ID      === "Nexus 5" &&
         spec.DEVICE.MAYBE   === false &&
@@ -92,7 +92,7 @@ function testDeviceNexus5(next) {
 
 function testDeviceRevision_Nexus7_2013(next) {
     var userAgent = "Mozilla/5.0 (Linux; Android 4.3; Nexus 7 Build/JWR66N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.111 Safari/537.36";
-    var spec = Device( userAgent, { devicePixelRatio: 2 } );
+    var spec = Device( Spec(userAgent), { devicePixelRatio: 2 } );
 
     if (spec.DEVICE.ID        === "Nexus 7 (2013)" &&
         spec.DEVICE.SOC       === "APQ8064" &&
@@ -111,7 +111,7 @@ function testDeviceRevision_Nexus7_2013(next) {
 
 function testDeviceAndroidFirefox(next) {
     var userAgent = "Mozilla/5.0 (Android; Mobile; rv:13.0) Gecko/13.0 Firefox/13.0";
-    var spec = Device( userAgent );
+    var spec = Device( Spec(userAgent) );
 
     if (spec.DEVICE.ID        === "" &&
         spec.DEVICE.SOC       === "" &&
@@ -130,7 +130,7 @@ function testDeviceAndroidFirefox(next) {
 
 function testDeviceWindowPhone8S(next) {
     var userAgent = "Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; Trident/6.0; IEMobile/10.0; ARM; Touch; HTC; Windows Phone 8S by HTC)";
-    var spec = Device( userAgent );
+    var spec = Device( Spec(userAgent) );
 
     if (spec.DEVICE.ID        === "8S" &&
         spec.DEVICE.SOC       === "MSM8627" &&
@@ -148,7 +148,7 @@ function testDeviceWindowPhone8S(next) {
 
 function testDeviceWindowPhoneLumia920(next) {
     var userAgent = "Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; Trident/6.0; IEMobile/10.0; ARM; Touch; NOKIA; Lumia 920)";
-    var spec = Device( userAgent );
+    var spec = Device( Spec(userAgent) );
 
     if (spec.DEVICE.ID        === "Lumia 920" &&
         spec.DEVICE.SOC       === "MSM8960" &&
