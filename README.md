@@ -19,7 +19,15 @@ $ npm install
 
 ```sh
 $ npm test
-
-    > uupaa.device.js@0.8.0 test /Users/username/path/Device.js
-    > NODE_ENV=production NODE_PATH=lib node --harmony test/index.node.js; open test/index.html
 ```
+
+# Minify
+
+```sh
+$ npm start
+
+  or
+
+$ node node_modules/uupaa.minify.js --keep --output ./lib/Device.min.js ./lib/Device.js
+```
+

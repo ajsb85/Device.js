@@ -8,7 +8,12 @@ new Test().add([
         testDeviceAndroidFirefox,
         testDeviceWindowPhone8S,
         testDeviceWindowPhoneLumia920,
-    ]).run();
+    ]).run().worker(function(err, test) {
+        if (!err) {
+            Device = Device_;
+            new Test(test).run().worker();
+        }
+    });
 
 function testDevice(next) {
     var spec = Device( Spec() );

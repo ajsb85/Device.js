@@ -1,23 +1,27 @@
 {
   "name":           "uupaa.device.js",
-  "version":        "0.8.0",
+  "version":        "0.8.1",
   "description":    "Detect mobile device spec.",
   "url":            "https://github.com/uupaa/Device.js",
   "keywords":       ["mobile", "device", "spec", "util", "uupaa"],
-  "author":         "uupaa <uupaa.js@gmail.com>",
-  "license":        "MIT",
-  "repository":     { "type": "git", "url": "https://github.com/uupaa/Device.js.git" },
-  "contributors":   [],
+  "repository": {
+    "type":         "git",
+    "url":          "https://github.com/uupaa/Device.js.git"
+  },
+  "scripts": {
+    "start":        "node node_modules/uupaa.minify.js --keep --output ./lib/Device.min.js ./lib/Device.js",
+    "test":         "NODE_ENV=production NODE_PATH=lib node --harmony test/index.node.js; open test/index.html"
+  },
   "devDependencies": {
-    "uupaa.help.js": ">= 0.8.1",
-    "uupaa.test.js": ">= 0.8.0",
-    "uupaa.task.js": ">= 0.8.0",
-    "uupaa.spec.js": ">= 0.8.0"
+    "uupaa.help.js":    "",
+    "uupaa.test.js":    "",
+    "uupaa.task.js":    "",
+    "uupaa.spec.js":    "",
+    "uupaa.minify.js":  ""
   },
   "lib":            "./lib/",
-  "main":           "index.js",
-  "scripts": {
-    "start":        "npm install",
-    "test":         "NODE_ENV=production NODE_PATH=lib node --harmony test/index.node.js; open test/index.html"
-  }
+  "main":           "./index.js",
+  "author":         "uupaa <uupaa.js@gmail.com>",
+  "license":        "MIT",
+  "contributors":   []
 }
