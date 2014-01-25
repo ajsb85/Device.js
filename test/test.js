@@ -9,7 +9,7 @@ new Test().add([
         testDeviceWindowPhone8S,
         testDeviceWindowPhoneLumia920,
     ]).run().worker(function(err, test) {
-        if (!err) {
+        if (!err && typeof Device_ !== "undefined") {
             Device = Device_;
             new Test(test).run().worker();
         }
