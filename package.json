@@ -1,6 +1,6 @@
 {
   "name":           "uupaa.device.js",
-  "version":        "0.8.5",
+  "version":        "0.8.6",
   "description":    "Detect mobile device spec.",
   "url":            "https://github.com/uupaa/Device.js",
   "keywords":       ["mobile", "device", "spec", "util", "uupaa"],
@@ -11,6 +11,9 @@
   "scripts": {
     "start":        "node node_modules/uupaa.minify.js --keep --output ./lib/Device.min.js ./lib/Device.js",
     "test":         "NODE_ENV=production NODE_PATH=lib node --harmony test/index.node.js; open test/index.html"
+  },
+  "dependencies": {
+    "uupaa.spec.js":    ""
   },
   "devDependencies": {
     "uupaa.help.js":    "",
