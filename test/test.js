@@ -25,9 +25,8 @@ function testDevice(next) {
 function testDeviceCatalog(next) {
     var object1 = Device.catalog("SOC");
     var object2 = Device.catalog("DEVICE");
-    var object3 = Device.catalog("");
 
-    if (object1 && object2 && object3) {
+    if (object1 && object2) {
         console.log("testDeviceCatalog ok.");
         next && next.pass();
     } else {
