@@ -1,13 +1,13 @@
 new Test().add([
         testDevice,
-        testDeviceCatalog,
         testDeviceToSpecObject,
         testDeviceiPhone5,
         testDeviceNexus5,
         testDeviceRevision_Nexus7_2013,
         testDeviceAndroidFirefox,
-        testDeviceWindowPhone8S,
-        testDeviceWindowPhoneLumia920,
+        testDevice_INFOBAR_A01,
+        testDeviceWindowsPhone8S,
+        testDeviceWindowsPhoneLumia920,
     ]).run().worker(function(err, test) {
         if (!err && typeof Device_ !== "undefined") {
             Device = Device_;
@@ -20,19 +20,6 @@ function testDevice(next) {
 
     console.log("testDevice ok: " + spec.DEVICE.ID);
     next && next.pass();
-}
-
-function testDeviceCatalog(next) {
-    var object1 = Device.catalog("SOC");
-    var object2 = Device.catalog("DEVICE");
-
-    if (object1 && object2) {
-        console.log("testDeviceCatalog ok.");
-        next && next.pass();
-    } else {
-        console.log("testDeviceCatalog ng.");
-        next && next.miss();
-    }
 }
 
 function testDeviceToSpecObject(next) {
@@ -132,7 +119,26 @@ function testDeviceAndroidFirefox(next) {
     }
 }
 
-function testDeviceWindowPhone8S(next) {
+function testDevice_INFOBAR_A01(next) {
+    var userAgent = "Mozilla/5.0 (Linux; U; Android 2.3.3; ja-jp; INFOBAR A01 Build/S6160) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1";
+    var spec = Device( Spec(userAgent) );
+
+    if (spec.DEVICE.ID        === "INFOBAR A01" &&
+        spec.DEVICE.SOC       === "MSM8655" &&
+        spec.DEVICE.GPS       === true &&
+        spec.OS.VERSION.PRE   ==  2.3 &&
+        spec.OS.VERSION.HIGHEST == 2.3 &&
+        spec.MEMORY.RAM       === 512 &&
+        spec.GPU.TYPE         === "Adreno") {
+        console.log("testDevice_INFOBAR_A01 ok: " + spec.DEVICE.ID);
+        next && next.pass();
+    } else {
+        console.log("testDevice_INFOBAR_A01 ng: " + spec.DEVICE.ID);
+        next && next.miss();
+    }
+}
+
+function testDeviceWindowsPhone8S(next) {
     var userAgent = "Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; Trident/6.0; IEMobile/10.0; ARM; Touch; HTC; Windows Phone 8S by HTC)";
     var spec = Device( Spec(userAgent) );
 
@@ -142,15 +148,15 @@ function testDeviceWindowPhone8S(next) {
         spec.OS.VERSION.PRE   ==  8 &&
         spec.MEMORY.RAM       === 512 &&
         spec.GPU.TYPE         === "Adreno") {
-        console.log("testDeviceWindowPhone8S ok: " + spec.DEVICE.ID);
+        console.log("testDeviceWindowsPhone8S ok: " + spec.DEVICE.ID);
         next && next.pass();
     } else {
-        console.log("testDeviceWindowPhone8S ng: " + spec.DEVICE.ID);
+        console.log("testDeviceWindowsPhone8S ng: " + spec.DEVICE.ID);
         next && next.miss();
     }
 }
 
-function testDeviceWindowPhoneLumia920(next) {
+function testDeviceWindowsPhoneLumia920(next) {
     var userAgent = "Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; Trident/6.0; IEMobile/10.0; ARM; Touch; NOKIA; Lumia 920)";
     var spec = Device( Spec(userAgent) );
 
@@ -161,10 +167,10 @@ function testDeviceWindowPhoneLumia920(next) {
         spec.MEMORY.RAM       === 1024 &&
         spec.GPU.TYPE         === "Adreno" &&
         spec.GPU.ID           === "225") {
-        console.log("testDeviceWindowPhoneLumia920 ok: " + spec.DEVICE.ID);
+        console.log("testDeviceWindowsPhoneLumia920 ok: " + spec.DEVICE.ID);
         next && next.pass();
     } else {
-        console.log("testDeviceWindowPhoneLumia920 ng: " + spec.DEVICE.ID);
+        console.log("testDeviceWindowsPhoneLumia920 ng: " + spec.DEVICE.ID);
         next && next.miss();
     }
 }
