@@ -8,6 +8,7 @@ new Test().add([
         testDevice_INFOBAR_A01,
         testDeviceWindowsPhone8S,
         testDeviceWindowsPhoneLumia920,
+        testDeviceKindle,
     ]).run().worker(function(err, test) {
         if (!err && typeof Device_ !== "undefined") {
             Device = Device_;
@@ -171,6 +172,25 @@ function testDeviceWindowsPhoneLumia920(next) {
         next && next.pass();
     } else {
         console.log("testDeviceWindowsPhoneLumia920 ng: " + spec.DEVICE.ID);
+        next && next.miss();
+    }
+}
+
+function testDeviceKindle(next) {
+    var userAgent = "Mozilla/5.0 (Linux; U; Android 4.0.3; en-us; KFTT Build/IML74K) AppleWebKit/535.19 (KHTML, like Gecko) Silk/3.4 Mobile Safari/535.19 Silk-Accelerated=true";
+    var spec = Device( Spec(userAgent) );
+
+    if (spec.DEVICE.ID        === "KFTT" &&
+        spec.DEVICE.SOC       === "OMAP4460" &&
+        spec.DEVICE.GPS       === false &&
+        spec.OS.VERSION.PRE   ==  4.0 &&
+        spec.MEMORY.RAM       === 1024 &&
+        spec.GPU.TYPE         === "PowerVR" &&
+        spec.GPU.ID           === "SGX540") {
+        console.log("testDeviceKindle ok: " + spec.DEVICE.ID);
+        next && next.pass();
+    } else {
+        console.log("testDeviceKindle ng: " + spec.DEVICE.ID);
         next && next.miss();
     }
 }
