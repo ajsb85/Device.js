@@ -1,6 +1,6 @@
 {
   "name":           "uupaa.device.js",
-  "version":        "0.8.13",
+  "version":        "0.8.14",
   "description":    "Detect mobile device spec.",
   "url":            "https://github.com/uupaa/Device.js",
   "keywords":       ["mobile", "device", "spec", "util", "uupaa"],
@@ -16,7 +16,6 @@
     "uupaa.spec.js":    ""
   },
   "devDependencies": {
-    "uupaa.mappedarray.js": "",
     "uupaa.help.js":    "",
     "uupaa.test.js":    "",
     "uupaa.task.js":    "",
