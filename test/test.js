@@ -9,10 +9,14 @@ new Test().add([
         testDeviceWindowsPhone8S,
         testDeviceWindowsPhoneLumia920,
         testDeviceKindle,
+        testDeviceGooglePlayEdition,
     ]).run().worker(function(err, test) {
-        if (!err && typeof Device_ !== "undefined") {
-            Device = Device_;
-            new Test(test).run().worker();
+        if (!err) {
+            var undo = Test.swap(Device, Device_);
+
+            new Test(test).run(function(err, test) {
+                undo = Test.undo(undo);
+            });
         }
     });
 
@@ -191,6 +195,19 @@ function testDeviceKindle(next) {
         next && next.pass();
     } else {
         console.log("testDeviceKindle ng: " + spec.DEVICE.ID);
+        next && next.miss();
+    }
+}
+
+function testDeviceGooglePlayEdition(next) {
+    var userAgent = "Mozilla/5.0 (Linux; U; Android 4.2.2; en-us; HTC6500LVW 4G Build/JDQ39) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30";
+    var spec = Device( Spec(userAgent) );
+
+    if (spec.DEVICE.ID === "HTC6500LVW") {
+        console.log("testDeviceGooglePlayEdition ok: " + spec.DEVICE.ID);
+        next && next.pass();
+    } else {
+        console.log("testDeviceGooglePlayEdition ng: " + spec.DEVICE.ID);
         next && next.miss();
     }
 }
