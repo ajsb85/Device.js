@@ -1,6 +1,6 @@
 {
   "name":           "uupaa.device.js",
-  "version":        "0.8.16",
+  "version":        "0.8.17",
   "description":    "Detect and Query mobile device spec.",
   "url":            "https://github.com/uupaa/Device.js",
   "keywords":       ["mobile", "device", "soc", "query", "spec", "util", "uupaa"],
