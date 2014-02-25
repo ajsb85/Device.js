@@ -1,25 +1,29 @@
 {
   "name":           "uupaa.device.js",
-  "version":        "0.8.15",
-  "description":    "Detect mobile device spec.",
+  "version":        "0.8.16",
+  "description":    "Detect and Query mobile device spec.",
   "url":            "https://github.com/uupaa/Device.js",
-  "keywords":       ["mobile", "device", "spec", "util", "uupaa"],
+  "keywords":       ["mobile", "device", "soc", "query", "spec", "util", "uupaa"],
   "repository": {
     "type":         "git",
     "url":          "https://github.com/uupaa/Device.js.git"
   },
   "scripts": {
-    "start":        "node node_modules/uupaa.minify.js --keep --output ./lib/Device.min.js ./lib/Device.js",
-    "test":         "NODE_ENV=production NODE_PATH=lib node --harmony test/index.node.js; open test/index.html"
+    "watch":        "node node_modules/uupaa.watch.js --verbose --action build ./lib/Device.js",
+    "build":        "node node_modules/uupaa.minify.js --keep --output ./lib/Device.min.js ./lib/Device.js",
+    "test":         "NODE_ENV=production NODE_PATH=lib node --harmony test/index.node.js; open test/index.html",
+    "lint":         "plato --title Device.js --jshint .jshintrc -d lint/plato lib/Device.js lib/Android.js lib/WindowsPhone.js; open lint/plato/index.html"
   },
   "dependencies": {
-    "uupaa.spec.js":    ""
+    "uupaa.spec.js":    "",
+    "uupaa.useragent.js":    ""
   },
   "devDependencies": {
     "uupaa.help.js":    "",
     "uupaa.test.js":    "",
     "uupaa.task.js":    "",
     "uupaa.spec.js":    "",
+    "uupaa.useragent.js":    "",
     "uupaa.minify.js":  ""
   },
   "lib":            "./lib/",

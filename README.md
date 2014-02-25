@@ -1,27 +1,33 @@
 Device.js
 =========
 
-Device.js is mobile device spec database.
+Detect and Query mobile device spec.
 
-# API Document
+# Document
 
 - https://github.com/uupaa/Spec.js/wiki/Spec
+- https://github.com/uupaa/UserAgent.js/wiki/UserAgent
 - https://github.com/uupaa/Device.js/wiki/Device
-- https://github.com/uupaa/DeviceQuery.js/wiki/DeviceQuery
 - https://github.com/uupaa/Browser.js/wiki/Browser
 - https://github.com/uupaa/OS.js/wiki/OS
 
-# Install, Setup modules
+# Install development dependency tools
 
 ```sh
 $ brew install closure-compiler
+$ brew install node
+$ npm install -g plato
+```
 
+# Clone Repository and Install
+
+```sh
 $ git clone git@github.com:uupaa/Device.js.git
 $ cd Device.js
 $ npm install
 ```
 
-# Minify
+# Build and Minify
 
 ```sh
 $ npm start
@@ -31,30 +37,19 @@ $ npm start
 $ node node_modules/uupaa.minify.js --keep --output ./lib/Device.min.js ./lib/Device.js
 ```
 
-## cutoff @node, @androidjp, @windowsphone
-Remove unused code blocks.
-
-```sh
-$ node node_modules/uupaa.minify.js --keep --output ./lib/Device.min.js ./lib/Device.js @node @androidjp @windowsphone
-```
-
-```js
-//{@node
-  ...
-//}@node
-
-//{@androidjp
-  ...
-//}@androidjp
-
-//{@windowsphone
-  ...
-//}@windowsphone
-```
-
 # Test
 
 ```sh
+$ npm run test
+
+  or
+
 $ npm test
+```
+
+# Lint
+
+```sh
+$ npm run lint
 ```
 
