@@ -20,11 +20,11 @@ new Test().add([
         testDeviceQuerySOCAndDeviceID,
         testDeviceQueryDeviceID,
     ]).run().worker(function(err, test) {
-        if (!err) {
+        if (!err && typeof Device_ !== "undefined") {
             var undo = Test.swap(Device, Device_);
 
             new Test(test).run(function(err, test) {
-                undo = Test.undo(undo);
+                Test.undo(undo);
             });
         }
     });
