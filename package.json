@@ -1,6 +1,6 @@
 {
   "name":           "uupaa.device.js",
-  "version":        "0.8.18",
+  "version":        "0.8.19",
   "description":    "Detect and Query mobile device spec.",
   "url":            "https://github.com/uupaa/Device.js",
   "keywords":       ["mobile", "device", "soc", "query", "spec", "util", "uupaa"],
@@ -15,9 +15,17 @@
     "lint":         "plato --title Device.js --jshint .jshintrc -d lint/plato lib/Device.js lib/Android.js lib/WindowsPhone.js; open lint/plato/index.html"
   },
   "build": {
-    "lib/Device.js": "",
-    "lib/Android.js": "",
-    "lib/WindowsPhone.js": ""
+    "all": {
+      "lib/Device.js": "",
+      "lib/Android.js": "",
+      "lib/WindowsPhone.js": ""
+    },
+    "node": {
+    },
+    "worker": {
+    },
+    "browser": {
+    }
   },
   "dependencies": {
     "uupaa.spec.js":    "",
