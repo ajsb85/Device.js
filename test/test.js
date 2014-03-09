@@ -59,7 +59,8 @@ function testDeviceiPhone5(next) {
             devicePixelRatio: 2
         };
 
-    var spec = Device( UserAgent( Spec( { ua: userAgent, emu: emulate } ) ) );
+    var override = { USER_AGENT: userAgent, DEVICE_INFO: emulate };
+    var spec = Device( UserAgent( Spec(override) ) );
 
     if (spec.DEVICE.ID      === "iPhone 5" &&
         spec.DEVICE.MAYBE   === true &&
@@ -76,7 +77,8 @@ function testDeviceiPhone5(next) {
 
 function testDeviceNexus5(next) {
     var userAgent = "Mozilla/5.0 (Linux; Android 4.4; Nexus 5 Build/BuildID) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Mobile Safari/537.36";
-    var spec = Device( UserAgent( Spec({ ua: userAgent }) ) );
+    var override = { USER_AGENT: userAgent };
+    var spec = Device( UserAgent( Spec(override) ) );
 
     if (spec.DEVICE.ID      === "Nexus 5" &&
         spec.DEVICE.MAYBE   === false &&
@@ -97,8 +99,9 @@ function testDeviceNexus5(next) {
 
 function testDeviceRevision_Nexus7_2013(next) {
     var userAgent = "Mozilla/5.0 (Linux; Android 4.3; Nexus 7 Build/JWR66N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.111 Safari/537.36";
-    var emu = { devicePixelRatio: 2 };
-    var spec = Device( UserAgent( Spec({ ua: userAgent, emu: emu }) ) );
+    var emulate = { devicePixelRatio: 2 };
+    var override = { USER_AGENT: userAgent, DEVICE_INFO: emulate };
+    var spec = Device( UserAgent( Spec(override) ) );
 
     if (spec.DEVICE.ID        === "Nexus 7 (2013)" &&
         spec.DEVICE.SOC       === "APQ8064" &&
@@ -117,7 +120,8 @@ function testDeviceRevision_Nexus7_2013(next) {
 
 function testDeviceAndroidFirefox(next) {
     var userAgent = "Mozilla/5.0 (Android; Mobile; rv:13.0) Gecko/13.0 Firefox/13.0";
-    var spec = Device( UserAgent( Spec({ ua: userAgent }) ) );
+    var override = { USER_AGENT: userAgent };
+    var spec = Device( UserAgent( Spec(override) ) );
 
     if (spec.DEVICE.ID        === "" &&
         spec.DEVICE.SOC       === "" &&
@@ -136,7 +140,8 @@ function testDeviceAndroidFirefox(next) {
 
 function testDevice_INFOBAR_A01(next) {
     var userAgent = "Mozilla/5.0 (Linux; U; Android 2.3.3; ja-jp; INFOBAR A01 Build/S6160) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1";
-    var spec = Device( UserAgent( Spec({ ua: userAgent }) ) );
+    var override = { USER_AGENT: userAgent };
+    var spec = Device( UserAgent( Spec(override) ) );
 
     if (spec.DEVICE.ID        === "INFOBAR A01" &&
         spec.DEVICE.SOC       === "MSM8655" &&
@@ -155,7 +160,8 @@ function testDevice_INFOBAR_A01(next) {
 
 function testDeviceWindowsPhone8S(next) {
     var userAgent = "Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; Trident/6.0; IEMobile/10.0; ARM; Touch; HTC; Windows Phone 8S by HTC)";
-    var spec = Device( UserAgent( Spec({ ua: userAgent }) ) );
+    var override = { USER_AGENT: userAgent };
+    var spec = Device( UserAgent( Spec(override) ) );
 
     if (spec.DEVICE.ID        === "8S" &&
         spec.DEVICE.SOC       === "MSM8627" &&
@@ -173,7 +179,8 @@ function testDeviceWindowsPhone8S(next) {
 
 function testDeviceWindowsPhoneLumia920(next) {
     var userAgent = "Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; Trident/6.0; IEMobile/10.0; ARM; Touch; NOKIA; Lumia 920)";
-    var spec = Device( UserAgent( Spec({ ua: userAgent }) ) );
+    var override = { USER_AGENT: userAgent };
+    var spec = Device( UserAgent( Spec(override) ) );
 
     if (spec.DEVICE.ID        === "Lumia 920" &&
         spec.DEVICE.SOC       === "MSM8960" &&
@@ -192,7 +199,8 @@ function testDeviceWindowsPhoneLumia920(next) {
 
 function testDeviceKindle(next) {
     var userAgent = "Mozilla/5.0 (Linux; U; Android 4.0.3; en-us; KFTT Build/IML74K) AppleWebKit/535.19 (KHTML, like Gecko) Silk/3.4 Mobile Safari/535.19 Silk-Accelerated=true";
-    var spec = Device( UserAgent( Spec({ ua: userAgent }) ) );
+    var override = { USER_AGENT: userAgent };
+    var spec = Device( UserAgent( Spec(override) ) );
 
     if (spec.DEVICE.ID        === "KFTT" &&
         spec.DEVICE.SOC       === "OMAP4460" &&
@@ -211,7 +219,8 @@ function testDeviceKindle(next) {
 
 function testDeviceGooglePlayEdition(next) {
     var userAgent = "Mozilla/5.0 (Linux; U; Android 4.2.2; en-us; HTC6500LVW 4G Build/JDQ39) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30";
-    var spec = Device( UserAgent( Spec({ ua: userAgent }) ) );
+    var override = { USER_AGENT: userAgent };
+    var spec = Device( UserAgent( Spec(override) ) );
 
     if (spec.DEVICE.ID === "HTC6500LVW") {
         console.log("testDeviceGooglePlayEdition ok: " + spec.DEVICE.ID);

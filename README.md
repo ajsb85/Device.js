@@ -11,45 +11,58 @@ Detect and Query mobile device spec.
 - https://github.com/uupaa/Browser.js/wiki/Browser
 - https://github.com/uupaa/OS.js/wiki/OS
 
-# Install development dependency tools
+# How to use
 
-```sh
-$ brew install closure-compiler
-$ brew install node
-$ npm install -g plato
+```js
+<script src="lib/Spec.js">
+<script src="lib/Device.js">
+<script>
+// for Browser
+console.log( Device(Spec()) );
+</script>
 ```
 
-# Clone Repository and Install
-
-```sh
-$ git clone git@github.com:uupaa/Device.js.git
-$ cd Device.js
-$ npm install
+```js
+// for WebWorkers
+importScripts("lib/Spec.js");
+importScripts("lib/Device.js");
+console.log( Device(Spec()) );
 ```
 
-# Build and Minify
-
-```sh
-$ npm start
-
-  or
-
-$ node node_modules/uupaa.minify.js --keep --output ./lib/Device.min.js ./lib/Device.js
+```js
+// for Node.js
+var Spec = require("lib/Spec.js");
+var Device = require("lib/Device.js");
+console.log( Device(Spec()) );
 ```
 
-# Test
+# for Developers
 
-```sh
-$ npm run test
+1. Install development dependency tools
 
-  or
+    ```sh
+    $ brew install closure-compiler
+    $ brew install node
+    $ npm install -g plato
+    ```
 
-$ npm test
-```
+2. Clone Repository and Install
 
-# Lint
+    ```sh
+    $ git clone git@github.com:uupaa/Xxx.js.git
+    $ cd Xxx.js
+    $ npm install
+    ```
 
-```sh
-$ npm run lint
-```
+3. Build and Minify
+
+    `$ npm run build`
+
+4. Test
+
+    `$ npm run test`
+
+5. Lint
+
+    `$ npm run lint`
 
