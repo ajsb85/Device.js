@@ -5,35 +5,42 @@ Detect and Query mobile device spec.
 
 # Document
 
+- https://github.com/uupaa/Device.js/wiki/Device
+
+and
+
 - https://github.com/uupaa/Spec.js/wiki/Spec
 - https://github.com/uupaa/UserAgent.js/wiki/UserAgent
-- https://github.com/uupaa/Device.js/wiki/Device
-- https://github.com/uupaa/OS.js/wiki/OS
 - https://github.com/uupaa/Browser.js/wiki/Browser
 
 # How to use
 
 ```js
 <script src="lib/Spec.js">
+<script src="lib/UserAgent.js">
 <script src="lib/Device.js">
 <script>
 // for Browser
-console.log( Device(Spec()) );
+console.log( Device(UserAgent(Spec())) );
 </script>
 ```
 
 ```js
 // for WebWorkers
 importScripts("lib/Spec.js");
+importScripts("lib/UserAgent.js");
 importScripts("lib/Device.js");
-console.log( Device(Spec()) );
+
+console.log( Device(UserAgent(Spec())) );
 ```
 
 ```js
 // for Node.js
-var Spec = require("lib/Spec.js");
-var Device = require("lib/Device.js");
-console.log( Device(Spec()) );
+var Spec      = require("lib/Spec.js");
+var UserAgent = require("lib/UserAgent.js");
+var Device    = require("lib/Device.js");
+
+console.log( Device(UserAgent(Spec())) );
 ```
 
 # for Developers
