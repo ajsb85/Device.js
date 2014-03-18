@@ -1,7 +1,7 @@
 Device.js
 =========
 
-Detect and Query mobile device spec.
+Detect spec by the Device catalog.
 
 # Document
 
