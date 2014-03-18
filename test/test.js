@@ -19,12 +19,16 @@ new Test().add([
         testDeviceQueryCaseSensitive,
         testDeviceQuerySOCAndDeviceID,
         testDeviceQueryDeviceID,
-    ]).run().worker(function(err, test) {
-        if (!err && typeof Device_ !== "undefined") {
-            var name = Test.swap(Device, Device_);
+    ]).run(function(err, test) {
+        if (1) {
+            err || test.worker(function(err, test) {
+                if (!err && typeof Device_ !== "undefined") {
+                    var name = Test.swap(Device, Device_);
 
-            new Test(test).run(function(err, test) {
-                Test.undo(name);
+                    new Test(test).run(function(err, test) {
+                        Test.undo(name);
+                    });
+                }
             });
         }
     });
