@@ -15,49 +15,49 @@
           "line": 5,
           "complexity": {
             "sloc": {
-              "physical": 1009,
-              "logical": 828
+              "physical": 1010,
+              "logical": 829
             },
             "cyclomatic": 54,
             "halstead": {
               "operators": {
                 "distinct": 34,
-                "total": 1761,
+                "total": 1762,
                 "identifiers": [
                   "__stripped__"
                 ]
               },
               "operands": {
                 "distinct": 1005,
-                "total": 6507,
+                "total": 6508,
                 "identifiers": [
                   "__stripped__"
                 ]
               },
-              "length": 8268,
+              "length": 8270,
               "vocabulary": 1039,
-              "difficulty": 110.0686567164179,
-              "volume": 82853.46213486002,
-              "effort": 9119569.281488637,
-              "bugs": 27.617820711620006,
-              "time": 506642.7378604798
+              "difficulty": 110.08557213930348,
+              "volume": 82873.50409473783,
+              "effort": 9123177.113458123,
+              "bugs": 27.62450136491261,
+              "time": 506843.1729698957
             },
             "params": 43
           }
         },
         "module": "lib/Device.js",
-        "maintainability": 44.95866128278466
+        "maintainability": 44.94709232760018
       }
     }
   ],
   "summary": {
     "total": {
-      "sloc": 1009,
-      "maintainability": 44.95866128278466
+      "sloc": 1010,
+      "maintainability": 44.94709232760018
     },
     "average": {
-      "sloc": 1009,
-      "maintainability": "44.96"
+      "sloc": 1010,
+      "maintainability": "44.95"
     }
   }
 }
