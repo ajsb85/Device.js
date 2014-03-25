@@ -13,8 +13,6 @@ onmessage = function(event) {
     importScripts(baseDir + "../node_modules/uupaa.useragent.js/lib/UserAgent.js");
     importScripts(baseDir + "../lib/Device.js");
     importScripts(baseDir + "../lib/Device.min.js");
-    importScripts(baseDir + "../lib/Android.js");
-    importScripts(baseDir + "../lib/WindowsPhone.js");
     importScripts(baseDir + "./test.js");
 
     self.postMessage({ error: self.errorMessage || "" });
@@ -29,8 +27,6 @@ onmessage = function(event) {
 <script src="../node_modules/uupaa.useragent.js/lib/UserAgent.js"></script>
 <script src="../lib/Device.js"></script>
 <script src="../lib/Device.min.js"></script>
-<script src="../lib/Android.js"></script>
-<script src="../lib/WindowsPhone.js"></script>
 <script src="./test.js"></script>
 </body></html>
 

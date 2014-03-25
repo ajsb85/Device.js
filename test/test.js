@@ -47,7 +47,7 @@ function testDeviceToSpecObject(next) {
         console.log("testDeviceToSpecObject ok.");
         next && next.pass();
     } else {
-        console.log("testDeviceToSpecObject ng.");
+        console.error("testDeviceToSpecObject ng.");
         next && next.miss();
     }
 }
@@ -74,7 +74,7 @@ function testDeviceiPhone5(next) {
         console.log("testDeviceiPhone5 ok: " + spec.DEVICE.ID);
         next && next.pass();
     } else {
-        console.log("testDeviceiPhone5 ng: " + spec.DEVICE.ID);
+        console.error("testDeviceiPhone5 ng: " + spec.DEVICE.ID);
         next && next.miss();
     }
 }
@@ -96,7 +96,7 @@ function testDeviceNexus5(next) {
         console.log("testDeviceNexus5 ok: " + spec.DEVICE.ID);
         next && next.pass();
     } else {
-        console.log("testDeviceNexus5 ng: " + spec.DEVICE.ID);
+        console.error("testDeviceNexus5 ng: " + spec.DEVICE.ID);
         next && next.miss();
     }
 }
@@ -117,7 +117,7 @@ function testDeviceRevision_Nexus7_2013(next) {
         console.log("testDeviceRevision_Nexus7_2013 ok: " + spec.DEVICE.ID);
         next && next.pass();
     } else {
-        console.log("testDeviceRevision_Nexus7_2013 ng: " + spec.DEVICE.ID);
+        console.error("testDeviceRevision_Nexus7_2013 ng: " + spec.DEVICE.ID);
         next && next.miss();
     }
 }
@@ -131,13 +131,13 @@ function testDeviceAndroidFirefox(next) {
         spec.DEVICE.SOC       === "" &&
         spec.DEVICE.GPS       === false &&
         spec.OS.VERSION.PRE   ==  0 &&
-        spec.DISPLAY.DPR      === 0 &&
-        spec.MEMORY.RAM       === 0 &&
-        spec.GPU.TYPE         === "") {
+        spec.DISPLAY.DPR      === 0) {
+      //spec.MEMORY.RAM       === 0 &&
+      //spec.GPU.TYPE         === ""
         console.log("testDeviceAndroidFirefox ok: " + spec.DEVICE.ID);
         next && next.pass();
     } else {
-        console.log("testDeviceAndroidFirefox ng: " + spec.DEVICE.ID);
+        console.error("testDeviceAndroidFirefox ng: " + spec.DEVICE.ID);
         next && next.miss();
     }
 }
@@ -157,7 +157,7 @@ function testDevice_INFOBAR_A01(next) {
         console.log("testDevice_INFOBAR_A01 ok: " + spec.DEVICE.ID);
         next && next.pass();
     } else {
-        console.log("testDevice_INFOBAR_A01 ng: " + spec.DEVICE.ID);
+        console.error("testDevice_INFOBAR_A01 ng: " + spec.DEVICE.ID);
         next && next.miss();
     }
 }
@@ -176,7 +176,7 @@ function testDeviceWindowsPhone8S(next) {
         console.log("testDeviceWindowsPhone8S ok: " + spec.DEVICE.ID);
         next && next.pass();
     } else {
-        console.log("testDeviceWindowsPhone8S ng: " + spec.DEVICE.ID);
+        console.error("testDeviceWindowsPhone8S ng: " + spec.DEVICE.ID);
         next && next.miss();
     }
 }
@@ -196,7 +196,7 @@ function testDeviceWindowsPhoneLumia920(next) {
         console.log("testDeviceWindowsPhoneLumia920 ok: " + spec.DEVICE.ID);
         next && next.pass();
     } else {
-        console.log("testDeviceWindowsPhoneLumia920 ng: " + spec.DEVICE.ID);
+        console.error("testDeviceWindowsPhoneLumia920 ng: " + spec.DEVICE.ID);
         next && next.miss();
     }
 }
@@ -216,7 +216,7 @@ function testDeviceKindle(next) {
         console.log("testDeviceKindle ok: " + spec.DEVICE.ID);
         next && next.pass();
     } else {
-        console.log("testDeviceKindle ng: " + spec.DEVICE.ID);
+        console.error("testDeviceKindle ng: " + spec.DEVICE.ID);
         next && next.miss();
     }
 }
@@ -230,7 +230,7 @@ function testDeviceGooglePlayEdition(next) {
         console.log("testDeviceGooglePlayEdition ok: " + spec.DEVICE.ID);
         next && next.pass();
     } else {
-        console.log("testDeviceGooglePlayEdition ng: " + spec.DEVICE.ID);
+        console.error("testDeviceGooglePlayEdition ng: " + spec.DEVICE.ID);
         next && next.miss();
     }
 }

@@ -1,9 +1,9 @@
 {
   "name":           "uupaa.device.js",
-  "version":        "0.8.25",
+  "version":        "0.8.26",
   "description":    "Detect spec by the Device catalog.",
   "url":            "https://github.com/uupaa/Device.js",
-  "keywords":       ["mobile", "device", "soc", "query", "spec", "util", "uupaa"],
+  "keywords":       ["mobile", "device", "soc", "query", "spec", "util", "uupaa", "WebModule"],
   "repository": {
     "type":         "git",
     "url":          "https://github.com/uupaa/Device.js.git"
@@ -17,7 +17,7 @@
     "lint":         "node node_modules/uupaa.plato.js; open lint/plato/index.html"
   },
   "x-build": {
-    "inputs":       ["lib/Device.js", "lib/Android.js", "lib/WindowsPhone.js"],
+    "inputs":       ["lib/Device.js"],
     "output":       "lib/Device.min.js"
   },
   "dependencies": {
