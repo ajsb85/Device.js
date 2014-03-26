@@ -1,6 +1,6 @@
 {
   "name":           "uupaa.device.js",
-  "version":        "0.8.30",
+  "version":        "0.9.0",
   "description":    "Detect spec by the Device catalog.",
   "url":            "https://github.com/uupaa/Device.js",
   "keywords":       ["mobile", "device", "soc", "query", "spec", "util", "uupaa", "WebModule"],

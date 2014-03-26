@@ -109,8 +109,8 @@ function testDeviceRevision_Nexus7_2013(next) {
 
     if (spec.DEVICE.ID        === "Nexus 7 (2013)" &&
         spec.DEVICE.SOC       === "APQ8064" &&
-        spec.DEVICE.GPS       === true &&
-        spec.OS.VERSION.PRE   ==  4.3 &&
+        spec.NETWORK.GPS      === true &&
+        parseFloat(spec.OS.RELEASE_VERSION) === 4.3 &&
         spec.DISPLAY.DPR      === 2 &&
         spec.MEMORY.RAM       === 2048 &&
         spec.GPU.TYPE         === "Adreno") {
@@ -128,9 +128,9 @@ function testDeviceAndroidFirefox(next) {
     var spec = Device( UserAgent( Spec(override) ) );
 
     if (spec.DEVICE.ID        === "" &&
-        spec.DEVICE.SOC       === "" &&
-        spec.DEVICE.GPS       === false &&
-        spec.OS.VERSION.PRE   ==  0 &&
+//      spec.DEVICE.SOC       === "" && // variable
+        spec.NETWORK.GPS      === true &&
+        parseFloat(spec.OS.RELEASE_VERSION) === 0 &&
         spec.DISPLAY.DPR      === 0) {
       //spec.MEMORY.RAM       === 0 &&
       //spec.GPU.TYPE         === ""
@@ -149,9 +149,9 @@ function testDevice_INFOBAR_A01(next) {
 
     if (spec.DEVICE.ID        === "INFOBAR A01" &&
         spec.DEVICE.SOC       === "MSM8655" &&
-        spec.DEVICE.GPS       === true &&
-        spec.OS.VERSION.PRE   ==  2.3 &&
-        spec.OS.VERSION.HIGHEST == 2.3 &&
+        spec.NETWORK.GPS      === true &&
+        parseFloat(spec.OS.RELEASE_VERSION) === 2.3 &&
+        parseFloat(spec.OS.HIGHEST_VERSION) === 2.3 &&
         spec.MEMORY.RAM       === 512 &&
         spec.GPU.TYPE         === "Adreno") {
         console.log("testDevice_INFOBAR_A01 ok: " + spec.DEVICE.ID);
@@ -169,8 +169,8 @@ function testDeviceWindowsPhone8S(next) {
 
     if (spec.DEVICE.ID        === "8S" &&
         spec.DEVICE.SOC       === "MSM8627" &&
-        spec.DEVICE.GPS       === true &&
-        spec.OS.VERSION.PRE   ==  8 &&
+        spec.NETWORK.GPS      === true &&
+        parseFloat(spec.OS.RELEASE_VERSION) === 8 &&
         spec.MEMORY.RAM       === 512 &&
         spec.GPU.TYPE         === "Adreno") {
         console.log("testDeviceWindowsPhone8S ok: " + spec.DEVICE.ID);
@@ -188,8 +188,8 @@ function testDeviceWindowsPhoneLumia920(next) {
 
     if (spec.DEVICE.ID        === "Lumia 920" &&
         spec.DEVICE.SOC       === "MSM8960" &&
-        spec.DEVICE.GPS       === true &&
-        spec.OS.VERSION.PRE   ==  8 &&
+        spec.NETWORK.GPS      === true &&
+        parseFloat(spec.OS.RELEASE_VERSION) === 8 &&
         spec.MEMORY.RAM       === 1024 &&
         spec.GPU.TYPE         === "Adreno" &&
         spec.GPU.ID           === "225") {
@@ -208,8 +208,8 @@ function testDeviceKindle(next) {
 
     if (spec.DEVICE.ID        === "KFTT" &&
         spec.DEVICE.SOC       === "OMAP4460" &&
-        spec.DEVICE.GPS       === false &&
-        spec.OS.VERSION.PRE   ==  4.0 &&
+        spec.NETWORK.GPS      === false &&
+        parseFloat(spec.OS.RELEASE_VERSION) === 4.0 &&
         spec.MEMORY.RAM       === 1024 &&
         spec.GPU.TYPE         === "PowerVR" &&
         spec.GPU.ID           === "SGX540") {
@@ -276,7 +276,7 @@ function testDeviceQueryDEVICE(next) {
 }
 
 function testDeviceQueryOSVERSION(next) {
-    var queryString = "OS.TYPE = android; OS.VERSION.PRE >= 2.3 ; OS.VERSION.HIGHEST < 4.1";
+    var queryString = "OS.TYPE = android; OS.RELEASE_VERSION >= 2.3 ; OS.HIGHEST_VERSION < 4.1";
     var id = Device.query(queryString);
 
     if ( id.length ) {
@@ -328,7 +328,7 @@ function testDeviceQuerySOCAndDeviceID(next) {
 }
 
 function testDeviceQueryDeviceID(next) {
-    var id = Device.query("OS.TYPE=SHL24;OS.VERSION.PRE>=SHL24;DEVICE.SOC=SHL24;DEVICE.BRAND=SHL24");
+    var id = Device.query("OS.TYPE=SHL24;OS.RELEASE_VERSION>=SHL24;DEVICE.SOC=SHL24;DEVICE.BRAND=SHL24");
     // id: ["SH-01F", "SH-01FDQ", "SH-02F", "SHT22", "SHL24", "SHL23", "DM016SH", "SBM302SH"]
 
     if ( id.indexOf("SH-01F")   >= 0 &&

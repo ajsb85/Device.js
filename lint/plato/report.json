@@ -8,56 +8,56 @@
         "link": "files/lib_Device_js/index.html"
       },
       "jshint": {
-        "messages": 3
+        "messages": 1
       },
       "complexity": {
         "aggregate": {
           "line": 5,
           "complexity": {
             "sloc": {
-              "physical": 1010,
-              "logical": 829
+              "physical": 990,
+              "logical": 821
             },
-            "cyclomatic": 54,
+            "cyclomatic": 55,
             "halstead": {
               "operators": {
                 "distinct": 34,
-                "total": 1762,
+                "total": 1719,
                 "identifiers": [
                   "__stripped__"
                 ]
               },
               "operands": {
-                "distinct": 1005,
-                "total": 6508,
+                "distinct": 1003,
+                "total": 6474,
                 "identifiers": [
                   "__stripped__"
                 ]
               },
-              "length": 8270,
-              "vocabulary": 1039,
-              "difficulty": 110.08557213930348,
-              "volume": 82873.50409473783,
-              "effort": 9123177.113458123,
-              "bugs": 27.62450136491261,
-              "time": 506843.1729698957
+              "length": 8193,
+              "vocabulary": 1037,
+              "difficulty": 109.72881355932203,
+              "volume": 82079.11406501677,
+              "effort": 9006443.804354552,
+              "bugs": 27.359704688338923,
+              "time": 500357.98913080845
             },
             "params": 43
           }
         },
         "module": "lib/Device.js",
-        "maintainability": 44.94709232760018
+        "maintainability": 44.63343147100287
       }
     }
   ],
   "summary": {
     "total": {
-      "sloc": 1010,
-      "maintainability": 44.94709232760018
+      "sloc": 990,
+      "maintainability": 44.63343147100287
     },
     "average": {
-      "sloc": 1010,
-      "maintainability": "44.95"
+      "sloc": 990,
+      "maintainability": "44.63"
     }
   }
 }
